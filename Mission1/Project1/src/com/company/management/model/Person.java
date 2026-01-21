@@ -1,5 +1,9 @@
 package Mission1.Project1.src.com.company.management.model;
 
+// Esta la clase seria el objeto padre o super padre que hereda a los hijos
+// Un padre puede tener muchos hijos pero un hijo solo puede tener un padre
+// y un hijo puede tener sus propios hijos tambien
+
 public class Person {
     // attributes
     private String name;

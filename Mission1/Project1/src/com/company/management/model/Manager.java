@@ -1,5 +1,7 @@
 package Mission1.Project1.src.com.company.management.model;
 
+// Esta la clase seria el objeto hijo que hereda de la clase padre Employee
+
 public class Manager extends Employee {
     // attributes
     private String department;
