@@ -7,7 +7,7 @@ public class Employee extends Person {
     private int housesWorked;
     
     // constructor
-    public Employee(String name, int age, boolean active, char gender, double salary) {
+    public Employee(String name, int age, boolean active, char gender, double salary, int housesWorked) {
         super(name, age, active, gender);
         this.salary = salary;
         this.housesWorked = housesWorked;

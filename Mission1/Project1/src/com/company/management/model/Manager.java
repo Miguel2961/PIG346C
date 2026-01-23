@@ -5,11 +5,13 @@ package Mission1.Project1.src.com.company.management.model;
 public class Manager extends Employee {
     // attributes
     private String department;
-    
+    private double bonus;
+
     // constructor
-    public Manager(String name, int age, double salary, String department) {
-        super(name, age, salary);
+    public Manager(String name, int age, double salary,  boolean active, char gender, String department, int housesWorked, double bonus) {
+        super(name, age, active, gender, salary, housesWorked);
         this.department = department;
+        this.bonus = bonus;
     }
 
     // getters and setters
@@ -21,11 +23,27 @@ public class Manager extends Employee {
         this.department = department;
     }
 
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
+    }
+
     // methods polimorphism
     @Override
     public void presentperson() {
         System.out.println("Hello, my name is " + getName()  + ", and I manage the " + department + " department.");
     }
+
+
+    @Override
+    public double calculatesalary() {
+        double baseSalary = super.calculatesalary();
+        return baseSalary + bonus;
+    }
+
     
 
     
