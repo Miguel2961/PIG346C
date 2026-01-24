@@ -7,4 +7,13 @@ public class NominationServices {
                
         return employeee.getSalary() * 12;
     }
+
+    public double Calculatenomination(double[] salarys) {
+        double total=0; // acumulador total += salarys[i]; y contador  i++
+        for(int i=0; i<salarys.length; i++ ){
+            total += salarys[i];
+        }
+        
+        return total;
+    }
 }

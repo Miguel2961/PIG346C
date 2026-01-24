@@ -7,9 +7,9 @@ package Mission1.Project1.src.com.company.management.model;
 public class Person {
     // attributes
     private String name;
-    private int age;
+    protected int age;
     protected boolean active;
-    private char gender;
+    protected char gender;
     
     // constructor
     public Person(String name , int age, boolean active , char gender){

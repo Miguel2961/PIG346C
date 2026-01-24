@@ -11,7 +11,7 @@ public class Main {
     // Esto seria un llamdo ditecto desde el constructor, puede pasar que pida los datos por defecto o puede que no
     
         Employee emp1 = new Employee("Alice", 30, true, 'F', 50000.0, 160);
-        Manager mgr1 = new Manager("Bob", 45, 80000.0, true, 'M', "Sales", 160, 10000.0);
+        Manager mgr1 = new Manager("Bob", 61, 80000.0, true, 'M', "Sales", 160, 10000.0);
         NominationServices nominationServices = new NominationServices();
 
     // llamdos de los metodos 
@@ -24,11 +24,17 @@ public class Main {
         emp1.presentperson();
         System.out.println("Annual salary of " + emp1.getName() + " is: $" + nominationServices.CalculateEmploye(emp1));
         System.out.println("status of worked: " + emp1.worked());
+        System.err.println("the employee is working status: " + emp1.classEmployee());
+        System.out.println("gender of employee: " + emp1.typeofEmployee());
+        
         System.out.println("\n*** EMPLOYEE #2 ***");
         System.out.println("\nManager Details:\n");
         mgr1.presentperson();
         System.out.println("Annual salary of " + mgr1.getName() + " is: $" + nominationServices.CalculateEmploye(mgr1));
         System.out.println("status of worked: " + mgr1.worked());
+        System.err.println("the employee is working status: " + mgr1.classEmployee());
+        System.out.println("gender of employee: " + mgr1.typeofEmployee());
+        
     }
 
 }

@@ -45,10 +45,34 @@ public class Employee extends Person {
     }
 
     public boolean olderyears(){
-        return getAge()>=18;
+        return age>=18;
     }
+
     public boolean worked(){
-        return getAge() >=18 && active == true;
+        return age >=18 && active == true;
+    }
+
+    public String classEmployee(){
+        if (age >= 18 && age <= 60){
+           return "Is an adult and working";
+        }
+        else  if (age > 60){
+            return "Is a senior in age of retirement";
+        }
+        else{
+              return "Is a minor and not working";
+        }  
     }
     
+    public String typeofEmployee(){
+        switch (gender) {
+            case 'M': return "Male Employee";
+                
+            case 'F': return "Female Employee";
+                
+            default: return "Gender not specified (M/F)";
+                
+        }
+        
+    }
 }
