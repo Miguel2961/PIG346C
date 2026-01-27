@@ -16,4 +16,12 @@ public class NominationServices {
         
         return total;
     }
+
+    public void simulatepayment(int months){ 
+        int i=1;
+        while(i<=months){
+            System.out.println("Payment month " + i );
+            i++;
+        }
+    }
 }

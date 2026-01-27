@@ -6,7 +6,10 @@ import Mission1.Project1.src.com.company.management.model.*;
 import Mission1.Project1.src.com.company.management.services.NominationServices;
 public class Main {
     public static void main(String[] args) {
-
+        // varible 
+        int months = 4;
+        double [] salarys = {50000.0, 60000.0, 55000.0, 70000.0};
+ 
     // Conocimiento general esto se llam intanciar la clase o el objecto. Employee emp1 = new Employee
     // Esto seria un llamdo ditecto desde el constructor, puede pasar que pida los datos por defecto o puede que no
     
@@ -35,6 +38,11 @@ public class Main {
         System.err.println("the employee is working status: " + mgr1.classEmployee());
         System.out.println("gender of employee: " + mgr1.typeofEmployee());
         
+        System.out.println("\n*** NOMINATION SERVICES ***");
+        System.out.println("calculate total nomination of employees: $"+nominationServices.Calculatenomination(salarys));
+
+        System.out.println("\n*** SIMULATE PAYMENT ***");
+        nominationServices.simulatepayment(months);
     }
 
 }
