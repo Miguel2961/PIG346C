@@ -6,11 +6,13 @@ public class Employee extends Person {
     private double salary;
     private int housesWorked;
     
+    
     // constructor
-    public Employee(String name, int age, boolean active, char gender, double salary, int housesWorked) {
-        super(name, age, active, gender);
+    public Employee(int id,String name, int age, boolean active, char gender, double salary, int housesWorked) {
+        super(id,name, age, active, gender);
         this.salary = salary;
         this.housesWorked = housesWorked;
+        this.id = id;
     }
 
     // getters and setters
@@ -74,5 +76,9 @@ public class Employee extends Person {
                 
         }
         
+    }
+
+    public String resum(){
+        return "ID: "+id+"Name: "+name+"Age: "+age;
     }
 }

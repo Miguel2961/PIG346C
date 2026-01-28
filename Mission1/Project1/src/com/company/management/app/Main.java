@@ -13,8 +13,8 @@ public class Main {
     // Conocimiento general esto se llam intanciar la clase o el objecto. Employee emp1 = new Employee
     // Esto seria un llamdo ditecto desde el constructor, puede pasar que pida los datos por defecto o puede que no
     
-        Employee emp1 = new Employee("Alice", 30, true, 'F', 50000.0, 160);
-        Manager mgr1 = new Manager("Bob", 61, 80000.0, true, 'M', "Sales", 160, 10000.0);
+        Employee emp1 = new Employee(1,"Alice", 30, true, 'F', 50000.0, 160 );
+        Manager mgr1 = new Manager(2,"Bob", 61, 80000.0, true, 'M', "Sales", 160, 10000.0);
         NominationServices nominationServices = new NominationServices();
 
     // llamdos de los metodos 

@@ -6,17 +6,18 @@ package Mission1.Project1.src.com.company.management.model;
 
 public class Person {
     // attributes
-    private String name;
+    protected String name;
     protected int age;
     protected boolean active;
     protected char gender;
-    
+    protected int id;
     // constructor
-    public Person(String name , int age, boolean active , char gender){
+    public Person(int id,String name , int age, boolean active , char gender) {
         this.name = name;
         this.age = age;
         this.active = active;
         this.gender = gender;
+        this.id = id;
     }
     
     // getters and setters
@@ -43,6 +44,12 @@ public class Person {
     public void setGender(char gender) {
         this.gender = gender;
     }
+
+    // get id
+    public int getId() {
+        return id;
+    }
+
     // methods
     
     public void presentperson(){

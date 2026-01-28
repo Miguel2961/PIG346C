@@ -8,8 +8,8 @@ public class Manager extends Employee {
     private double bonus;
 
     // constructor
-    public Manager(String name, int age, double salary,  boolean active, char gender, String department, int housesWorked, double bonus) {
-        super(name, age, active, gender, salary, housesWorked);
+    public Manager(int id,String name, int age, double salary,  boolean active, char gender, String department, int housesWorked, double bonus  ) {
+        super(id,name, age, active, gender, salary, housesWorked);
         this.department = department;
         this.bonus = bonus;
     }
