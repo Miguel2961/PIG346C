@@ -79,6 +79,6 @@ public class Employee extends Person {
     }
 
     public String resum(){
-        return "ID: "+id+"Name: "+name+"Age: "+age;
+        return "ID: "+id+" Name: "+name+" Age: "+age+" Gender: "+gender+" Salary: "+salary+" Hours Worked: "+housesWorked;
     }
 }

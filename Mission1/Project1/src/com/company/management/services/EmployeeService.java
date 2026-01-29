@@ -36,4 +36,16 @@ public class EmployeeService {
         }
         System.out.println("Employee with ID " + id + " not found.");
     }
+
+    // Consult employee by ID
+    public void consultEmployee(int id) {
+        for (Employee emp : employees) {
+            if (emp.getId() == id) {
+                System.out.println("Employee found: "+ emp.resum());
+                return;
+            }
+        }
+        System.out.println("Employee with ID " + id + " not found.");
+
+    }
 }
