@@ -29,7 +29,7 @@ public class EmployeeService {
             // get(i) recore la lista de cada empleado, para veridicar su id
             if(employees.get(i).getId() == id){
                 employees.remove(i);
-                System.out.println("Employee with ID " + id + " has been deleted.");
+                System.out.println("Employee with  " + id + " has been deleted.");
                 return;
             }
 
