@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 // lybrary to import components
 import { UserService } from '../../../services/user.service/user.service';
-import { CommonModule, JsonPipe } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-user.component',
-  imports: [ CommonModule, JsonPipe],
+  imports: [ ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
   // template: '<p>hola desde user.componet.ts</p>',
