@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 // Propiedad de java para majar las listas
 import java.util.List;
 
+
 // import org.springframework.web.server.ResponseStatusException;
 // import org.springframework.http.HttpStatus;
  
@@ -41,5 +42,20 @@ public class UserController {
             HttpStatus.NOT_FOUND,
             "Usuario no encontrado"));
     } */
+
+    /*@RequestBody es una anotación de Spring Boot (Spring MVC) que se usa para decirle al servidor:
+      👉 “Toma los datos que vienen en el cuerpo de la petición HTTP y conviértelos en un objeto Java.
+      
+      @PathVariable es una anotación de Spring Boot que se usa para obtener valores que vienen en la URL (en la ruta) y guardarlos en variables del método.
+      👉 Sirve para capturar datos directamente desde la dirección del endpoint.”
+      Se usa principalmente cuando el cliente envía datos en JSON desde frontend, Postman, Angular, etc. */
+    @PutMapping("/{id}")
+    public User update(@PathVariable Long id, @RequestBody User userDetails) {
+        //TODO: process PUT request
+       User user = userRepository.findById(id).orElseThrow(()-> new RuntimeException("Usuario no encontrado"));
+       user.setUsername(userDetails.getUsername());
+       user.setEmail(userDetails.getEmail());
+       return userRepository.save(user);
     
+    }
 }
