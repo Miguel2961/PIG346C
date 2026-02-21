@@ -3,6 +3,12 @@ spring:
     url: jdbc:postgresql://localhost:5432/java_gip346c #conecta a la base de datos: el nombre es igual a la DB
     username: postgres
     password: 119326
+
+  security:
+    user:
+      name: admin
+      password: 1234
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,3 +21,5 @@ server:
   port: 8080 #El puerto por el cual corre 
   error:
     include-message: always #Incluye el error por defecto si no se encuentra el usuario 
+
+  
