@@ -1,15 +1,15 @@
 package com.talentotech.energia.dto;
 
 public class LoginRequest {
-    private String usernsme;
+    private String username;
     private String password;
 
-    public String getUsernsme() {
-        return usernsme;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsernsme(String usernsme) {
-        this.usernsme = usernsme;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

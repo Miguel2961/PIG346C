@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.talentotech.energia.dto.LoginRequest;
 import com.talentotech.energia.model.User;
 import com.talentotech.energia.repository.UserRepository;
-
+import com.talentotech.energia.exception.ResourceNotFoundException;
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -21,7 +21,7 @@ public class UserService {
     }
 
     public User crearUsuario(User user) {
-        user.setPassaword(passwordEncoder.encode(user.getPassaword()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
     
@@ -41,8 +41,8 @@ public class UserService {
        if(userDetails.getEmail()!=null && !userDetails.getEmail().trim().isEmpty()){
             user.setEmail(userDetails.getEmail());      
        }
-       if(userDetails.getPassaword()!=null && !userDetails.getPassaword().trim().isEmpty()){
-            user.setPassaword(passwordEncoder.encode(userDetails.getPassaword()));      
+       if(userDetails.getPassword()!=null && !userDetails.getPassword().trim().isEmpty()){
+            user.setPassword(passwordEncoder.encode(userDetails.getPassword()));      
        }
        if(userDetails.getRole()!=null){
             user.setRole(userDetails.getRole());
@@ -55,14 +55,14 @@ public class UserService {
     }
 
     public String login(LoginRequest request){
-        Optional<User> OptionalUser = userRepository.findByUsername(request.getUsernsme());
+        Optional<User> OptionalUser = userRepository.findByUsername(request.getUsername());
         if(OptionalUser.isEmpty()){
-            throw new RuntimeException("Usuario no encontrado");
+            throw new ResourceNotFoundException("Usuario no encontrado");
 
         }
         User user = OptionalUser.get();
-        if(!passwordEncoder.matches(request.getPassword(), user.getUsername())){
-            throw new RuntimeException("Contraseña incorrecta");
+        if(!passwordEncoder.matches(request.getPassword(), user.getPassword())){
+            throw new ResourceNotFoundException("Contraseña incorrecta");
         }
 
         return "Login correcto";
