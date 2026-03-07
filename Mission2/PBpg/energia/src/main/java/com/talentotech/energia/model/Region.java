@@ -6,7 +6,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "region",
-       uniqueConstraints = @UniqueConstraint(columnNames = {"name", "country_id"}))
+       uniqueConstraints = @UniqueConstraint(columnNames = {"name", "country_id"})) //Permite evitar dos departamentos con el mismos nombre 
 public class Region {
 
     @Id
