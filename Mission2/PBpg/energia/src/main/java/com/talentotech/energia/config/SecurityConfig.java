@@ -21,9 +21,11 @@ public class SecurityConfig {
         http
         .csrf(csrf -> csrf.disable()) //Si no se desactiva falla POST/PUT/DELETE
         .authorizeHttpRequests(auth -> auth
+        .requestMatchers("/api/users/{id}").permitAll()    
         .requestMatchers("/api/users").permitAll()
-        .requestMatchers("/api/users/{id}").permitAll()
         .requestMatchers("/api/users/login").permitAll()
+        .requestMatchers("/api/country").permitAll()
+        .requestMatchers("/api/region").permitAll()
         .anyRequest().authenticated())
         .formLogin(form -> form.disable())
         .httpBasic(basic -> basic.disable());

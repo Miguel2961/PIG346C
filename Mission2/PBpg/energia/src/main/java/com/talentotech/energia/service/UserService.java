@@ -32,9 +32,9 @@ public class UserService {
     public Optional<User> findById(Long id) {
         return userRepository.findById(id);
     }
-
+// .orElseThrow controlar el error
     public User update(Long id, User userDetails) {
-        User user = userRepository.findById(id).orElseThrow(()-> new RuntimeException("Usuario no encontrado"));
+        User user = userRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Usuario no encontrado"));
        if(userDetails.getUsername()!=null && !userDetails.getUsername().trim().isEmpty()){
             user.setUsername(userDetails.getUsername());      
        }
